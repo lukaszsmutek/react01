@@ -1,5 +1,6 @@
 import React from 'react';
 import ListWrapper from './Components/ListWrapper/ListWrapper';
+import Form from './Components/Form/Form'
 import './index.css'
 
 const initialStateItems = [{
@@ -38,6 +39,7 @@ class App extends React.Component {
           <ListWrapper
               items={this.state.items}
           />
+          <Form/>
          </div>
         )
     }
