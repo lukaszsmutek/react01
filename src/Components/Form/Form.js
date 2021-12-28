@@ -1,12 +1,11 @@
 import React from 'react';
 import "./Form.css"
 
-const Form = () => (
-    <form>
+const Form = ({submitFn}) => (
 <div className="form__wrapper">
         <h2>Add new twitter account</h2>
         <form 
-            className="form__form" 
+            className="form__form" onSubmit={submitFn}
         >
             <div className="form__item">
                 <input 
@@ -53,7 +52,7 @@ const Form = () => (
             </button>
         </form>
     </div>
-    </form>
+
 );
 
 export default Form;
