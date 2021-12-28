@@ -1,5 +1,5 @@
 import React from 'react';
-import './ListItem.css';
+import styles from'./ListItem.module.scss';
 import PropTypes from 'prop-types';
 
 const ListItem = ({
@@ -8,15 +8,15 @@ const ListItem = ({
     description,
     twitterLink
 }) => (
-    <li className='listItem__wrapper'>
+    <li className={styles.wrapper}>
         <img src={image}
-            className='listItem__image'
+            className={styles.image}
                 alt={name}
             />
         <div>
-            <h2 className='listItem__name'>{name}</h2>
-            <p className='listItem__description'>{description}</p>
-            <a href={twitterLink} className='listItem__button'
+            <h2 className={styles.name}>{name}</h2>
+            <p className={styles.description}>{description}</p>
+            <a href={twitterLink} className={styles.button}
             rel = "noreferrer"
             target="_blank">visit twitter page</a>
         </div>

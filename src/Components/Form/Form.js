@@ -1,31 +1,31 @@
 import React from 'react';
-import "./Form.css"
+import styles from "./Form.module.scss";
 
 const Form = ({submitFn}) => (
-<div className="form__wrapper">
+<div className={styles.wrapper}>
         <h2>Add new twitter account</h2>
         <form 
-            className="form__form" onSubmit={submitFn}
+            className={styles.form} onSubmit={submitFn}
         >
-            <div className="form__item">
+            <div className={styles.item}>
                 <input 
                     type="text" 
                     name="name" 
                     id="name" placeholder=" " maxLength="30"
                 />
                 <label htmlFor="name">Name</label>
-                <div className="forms__item__bar"></div>
+                <div className={styles.item__bar}></div>
             </div>
-            <div className="form__item">
+            <div className={styles.item}>
                 <input
                     type="text"
                     name="link"
                     id="link" placeholder=" "
                 />
                 <label htmlFor="link">Link</label>
-                <div className="forms__item__bar"></div>
+                <div className={styles.item__bar}></div>
             </div>
-            <div className="form__item">
+            <div className={styles.item}>
                 <input
                     type="text"
                     name="image"
@@ -33,19 +33,19 @@ const Form = ({submitFn}) => (
                     placeholder=" " 
                 />
                 <label htmlFor="image">Image</label>
-                <div className="forms__item__bar"></div>
+                <div className={styles.item__bar}></div>
             </div>
-            <div className="form__item">
+            <div className={styles.item}>
                 <textarea
                     name="description"
                     id="description"
                     placeholder=" "
                 />
                 <label htmlFor="description">Description</label>
-                <div className="forms__item__bar"></div>
+                <div className={styles.item__bar}></div>
             </div>
             <button 
-                className="form__button"
+                className={styles.button}
                 type="submit"
             >
                 add new item
