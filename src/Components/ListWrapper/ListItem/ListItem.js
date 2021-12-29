@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './ListItem.module.scss';
 import Button from '../../Button/Button';
 import PropTypes from 'prop-types';
+import Title from '../../Title/Title';
 
 const ListItem = ({
     image,
@@ -19,7 +20,9 @@ const ImageTag = image? 'img':'div';
                 alt={name}
          />
         <div>
-            <h2 className={styles.name}>{name}</h2>
+            <Title 
+                children={name}
+            />
             <p className={styles.description}>{description}</p>
             <Button href={twitterLink}/>
         </div>
