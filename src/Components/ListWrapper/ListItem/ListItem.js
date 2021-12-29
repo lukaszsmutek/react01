@@ -7,12 +7,16 @@ const ListItem = ({
     name,
     description,
     twitterLink
-}) => (
+}) => {
+
+const ImageTag = image? 'img':'div';
+    
+    return (
     <li className={styles.wrapper}>
-        <img src={image}
-            className={styles.image}
+        <ImageTag src={image}
+            className={image?styles.image:styles.imageNone}
                 alt={name}
-            />
+         />
         <div>
             <h2 className={styles.name}>{name}</h2>
             <p className={styles.description}>{description}</p>
@@ -21,16 +25,17 @@ const ListItem = ({
             target="_blank">visit twitter page</a>
         </div>
     </li>
-);
+)};
 
 ListItem.propTypes = {
-    image:PropTypes.string.isRequired,
+    image:PropTypes.string,
     name:PropTypes.string.isRequired,
     description:PropTypes.string,
     twitterLink:PropTypes.string.isRequired}
 
 ListItem.defaultProps = {
-    description:"One of the React creators"
+    description:"One of the React creators",
+    image:null,
 }
 
 export default ListItem;

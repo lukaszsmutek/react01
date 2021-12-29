@@ -11,7 +11,9 @@ const Form = ({submitFn}) => (
                 <input 
                     type="text" 
                     name="name" 
-                    id="name" placeholder=" " maxLength="30"
+                    id="name" placeholder=" " 
+                    required
+                    maxLength="30"
                 />
                 <label htmlFor="name">Name</label>
                 <div className={styles.item__bar}></div>
@@ -20,6 +22,7 @@ const Form = ({submitFn}) => (
                 <input
                     type="text"
                     name="link"
+                    required
                     id="link" placeholder=" "
                 />
                 <label htmlFor="link">Link</label>
@@ -39,6 +42,7 @@ const Form = ({submitFn}) => (
                 <textarea
                     name="description"
                     id="description"
+                    required
                     placeholder=" "
                 />
                 <label htmlFor="description">Description</label>
