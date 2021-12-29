@@ -1,7 +1,5 @@
 import React from 'react';
-import ListWrapper from './Components/ListWrapper/ListWrapper';
-import Form from './Components/Form/Form'
-import './index.css'
+import './index.css';
 
 const initialStateItems = [{
     image: 'https://d2eip9sf3oo6c2.cloudfront.net/instructors/avatars/000/000/032/medium/oapgW_Fp_400x400.jpg',
@@ -51,10 +49,7 @@ class App extends React.Component {
     render() {
         return(
          <div>
-          <ListWrapper
-              items={this.state.items}
-          />
-          <Form submitFn={this.addItem}/>
+            <h1>Hello World!</h1>
          </div>
         )
     }

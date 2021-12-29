@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './ListItem.module.scss';
-import Button from '../../Button/Button';
+import Button from '../Button/Button';
 import PropTypes from 'prop-types';
-import Title from '../../Title/Title';
+import Title from '../Title/Title';
 
 const ListItem = ({
     image,
