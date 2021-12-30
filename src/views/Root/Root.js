@@ -4,6 +4,7 @@ import {BrowserRouter,Routes, Route} from 'react-router-dom';
 import NotesView from '../NotesView/NotesView';
 import ArticlesView from '../ArticlesView/ArticlesView';
 import TwittersView from '../TwittersView/TwittersView';
+import Navigation from '../../Components/Navigation/Navigation';
 
 
 const initialStateItems = [{
@@ -53,8 +54,9 @@ class App extends React.Component {
 
     render() {
         return(
-          <> <p>Root</p>
+          <>
           <BrowserRouter>
+          <Navigation/>
             <Routes>
                 <Route path = "/" element = {<TwittersView/>} />
                 <Route path = "/notes" element = {<NotesView/>} />
