@@ -1,7 +1,7 @@
 import React from 'react'
 
 const ArticlesView = () => (
-<h1>This is Articles View</h1>
+<h1>This is anArticles View</h1>
 )
 
 export default ArticlesView;

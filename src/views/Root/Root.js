@@ -1,5 +1,10 @@
 import React from 'react';
 import './index.css';
+import {BrowserRouter,Routes, Route} from 'react-router-dom';
+import NotesView from '../NotesView/NotesView';
+import ArticlesView from '../ArticlesView/ArticlesView';
+import TwittersView from '../TwittersView/TwittersView';
+
 
 const initialStateItems = [{
     image: 'https://d2eip9sf3oo6c2.cloudfront.net/instructors/avatars/000/000/032/medium/oapgW_Fp_400x400.jpg',
@@ -48,10 +53,15 @@ class App extends React.Component {
 
     render() {
         return(
-         <div>
-            <h1>Hello World!</h1>
-         </div>
-        )
+          <> <p>Root</p>
+          <BrowserRouter>
+            <Routes>
+                <Route path = "/" element = {<TwittersView/>} />
+                <Route path = "/notes" element = {<NotesView/>} />
+                <Route path = "/articles" element = {<ArticlesView/>} />
+            </Routes>
+            </BrowserRouter></>
+        );
     }
 }
 
