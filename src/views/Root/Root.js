@@ -7,6 +7,7 @@ import TwittersView from '../TwittersView/TwittersView';
 import Navigation from '../../Components/Navigation/Navigation';
 
 
+
 const initialStateItems = [{
     image: 'https://d2eip9sf3oo6c2.cloudfront.net/instructors/avatars/000/000/032/medium/oapgW_Fp_400x400.jpg',
     name: 'Dan Abramov',
