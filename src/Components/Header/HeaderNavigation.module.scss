@@ -1,10 +1,8 @@
-.wrapper {
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-}
 
 .navItem {
     list-style:none;
+    display:inline-block;
+    margin-right:50px;
 
     &Link {
         text-decoration: none;
