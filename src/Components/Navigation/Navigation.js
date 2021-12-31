@@ -1,14 +1,23 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styles from './Navigation.module.scss';
 
 
 const Navigation = () => (
 <nav>
     <ul className={styles.wrapper}>
-        <li className = {styles.NavigationItem}><Link to={"/"}>Twitters</Link></li>
-        <li className = {styles.NavigationItem}><Link to={"/articles"}>Articles</Link></li>
-        <li className = {styles.NavigationItem}><Link to={"/notes"}>Notes</Link></li>
+        <li className = {styles.navigationItem}><NavLink
+        style = {({ isActive }) => ({fontWeight: isActive ? 700: ''})}
+        className = {styles.navigationItemLink}
+        to={"/"}>Twitters</NavLink></li>
+        <li className = {styles.navigationItem}><NavLink
+        style = {({ isActive }) => ({fontWeight: isActive ? 700: ''})}
+        className = {styles.navigationItemLink}
+        to={"/articles"}>Articles</NavLink></li>
+        <li className = {styles.navigationItem}><NavLink
+        style = {({ isActive }) => ({fontWeight: isActive ? 700: ''})}
+        className = {styles.navigationItemLink}
+         to={"/notes"}>ole</NavLink></li>
     </ul>
 </nav>
 );

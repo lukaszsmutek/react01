@@ -1,7 +1,13 @@
-.wrapper{
-
+.wrapper {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
 }
 
-.NAvigationItem{
+.navigationItem {
+    list-style:none;
 
+    &Link {
+        text-decoration: none;
+        color: #818181;
+    }
 }
