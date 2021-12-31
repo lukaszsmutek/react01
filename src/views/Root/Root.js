@@ -4,7 +4,7 @@ import {BrowserRouter,Routes, Route} from 'react-router-dom';
 import NotesView from '../NotesView/NotesView';
 import ArticlesView from '../ArticlesView/ArticlesView';
 import TwittersView from '../TwittersView/TwittersView';
-import Navigation from '../../Components/Navigation/Navigation';
+import Header from '../../Components/Header/Header';
 
 
 
@@ -57,7 +57,7 @@ class App extends React.Component {
         return(
           <>
           <BrowserRouter>
-          <Navigation/>
+          <Header/>
             <Routes>
                 <Route path = "/" element = {<TwittersView/>} />
                 <Route path = "/notes" element = {<NotesView/>} />
