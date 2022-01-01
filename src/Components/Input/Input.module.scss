@@ -12,7 +12,7 @@
       transition: .1s all;
     }
 
-label {
+.label {
     color: #7d7d7d;
     position: absolute;
     top: 3px;
@@ -21,7 +21,7 @@ label {
     font-size: 16px;
 }
     
-input, textarea {
+.input, .textarea {
     color: #7d7d7d;
     font-size: 16px;
     border: none;
@@ -30,25 +30,25 @@ input, textarea {
     background: none;
 }
     
-textarea {
+.textarea {
     resize: none;
     min-height: 150px;
 }
     
-input:focus, textarea:focus {
+.input:focus, .textarea:focus {
     outline: none;
 }
     
-input:focus + label, textarea:focus + label {
+.input:focus + .label, .textarea:focus + .label {
     top: -22px;
     font-size: 13px;
 }
 
-input:not(:placeholder-shown) + label, textarea:not(:placeholder-shown) + label  {
+.input:not(:placeholder-shown) + .label, .textarea:not(:placeholder-shown) + .label  {
     top: -22px;
     font-size: 13px;
 }
 
-input:focus ~ .item__bar, textarea:focus ~ .item__bar {
+.input:focus ~ .item__bar, .textarea:focus ~ .item__bar {
     background: #1E58FF;
 }
