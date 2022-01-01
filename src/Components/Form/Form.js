@@ -3,6 +3,7 @@ import styles from "./Form.module.scss";
 import Input from '../Input/Input';
 import Button from '../Button/Button';
 import Title from '../Title/Title';
+import Radio from './FormRadio';
 
 const types = {
 twitter:'twitter',
@@ -33,31 +34,29 @@ class Form extends React.Component{
                     className={styles.form} onSubmit={this.props.submitFn}
                     autoComplete='off'
                 >
+        <div className={styles.formOptions}>
 
-                <label htmlFor={types.twitter} >
+                <Radio
+                id={types.twitter}
+                checked={this.state.activeOption === types.twitter}
+                changeFn={()=>this.handleRadioButtonChange(types.twitter)}>
                     Twitter
-                </label>
-                <input
-                    id={types.twitter} type="radio"
-                    checked = {this.state.activeOption===types.twitter}
-                    onChange={()=>this.handleRadioButtonChange(types.twitter)}
-                    />
-                <label htmlFor={types.article}>
+                </Radio>
+                <Radio
+                id={types.article}
+                checked={this.state.activeOption === types.article}
+                changeFn={()=>this.handleRadioButtonChange(types.article)}>
                     Article
-                </label>
-                <input
-                    id={types.article} type="radio"
-                    checked = {this.state.activeOption===types.article}
-                    onChange={()=>this.handleRadioButtonChange(types.article)}
-                    />
-                <label htmlFor={types.note}>
-                Note</label>
-                <input
-                    id={types.note} type="radio"
-                    checked = {this.state.activeOption===types.note}
-                    onChange={()=>this.handleRadioButtonChange(types.note)}
-                    />
+                </Radio>
+                <Radio
+                id={types.note}
+                checked={this.state.activeOption === types.note}
+                changeFn={()=>this.handleRadioButtonChange(types.note)}>
+                    Note
+                </Radio>
 
+        </div>
+              
                     <Input
                         name = "name"
                         label = "Name"

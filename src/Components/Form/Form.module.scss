@@ -14,8 +14,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+}
 
-    button{
-        margin-top:50px;
+.radioInput{
+    
+    &Label{
+    font-weight:700;
+    color:#1E58FF;
+    border:#1E58FF;;
     }
 }
+
