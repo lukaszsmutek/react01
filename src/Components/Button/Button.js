@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Button.module.scss';
 
-const Button = ({children,href, secondary}) => {
+const Button = ({children,href, secondary,...props}) => {
     
     const buttonClass = secondary ? styles.secondary : styles.button;
     
@@ -15,7 +15,7 @@ return (
                     target="_blank">
                     visit twitter page
                 </a>):(<button 
-        className={buttonClass}
+        className={buttonClass} {...props}
         >
         {children}
         </button>)} 

@@ -5,6 +5,7 @@ import NotesView from '../NotesView/NotesView';
 import ArticlesView from '../ArticlesView/ArticlesView';
 import TwittersView from '../TwittersView/TwittersView';
 import Header from '../../Components/Header/Header';
+import Modal from '../../Components/Modal/Modal';
 
 
 
@@ -36,6 +37,7 @@ const initialStateItems = [{
 class App extends React.Component {
     state = {
         items:[...initialStateItems],
+        isModalOpen:false,
     }
 
     addItem = (e) => {
@@ -51,18 +53,38 @@ class App extends React.Component {
         this.setState(prevState=>({items: [...prevState.items, newItem],}));
 
         e.target.reset();
+    };
+
+    openModal = () => {
+        this.setState(
+            {
+                isModalOpen: true,
+            }
+        )
+    }
+
+    closeModal = () => {
+        this.setState(
+            {
+                isModalOpen: false,
+            }
+        )
     }
 
     render() {
+
+        const {isModalOpen} = this.state;
+
         return(
           <>
           <BrowserRouter>
-          <Header/>
+          <Header openModalFn = {this.openModal}/>
             <Routes>
                 <Route path = "/" element = {<TwittersView/>} />
                 <Route path = "/notes" element = {<NotesView/>} />
                 <Route path = "/articles" element = {<ArticlesView/>} />
             </Routes>
+            {isModalOpen && <Modal closeModalFn = {this.closeModal}/>}
             </BrowserRouter></>
         );
     }
