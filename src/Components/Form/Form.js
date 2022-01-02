@@ -1,4 +1,5 @@
 import React from 'react';
+import AppContext from '../../context';
 import styles from "./Form.module.scss";
 import Input from '../Input/Input';
 import Button from '../Button/Button';
@@ -28,11 +29,15 @@ class Form extends React.Component{
     }
     render(){
         const {activeOption}=this.state;
+
         return(
-        <div className={styles.wrapper}>
+        <AppContext.Consumer>
+        {
+            (context)=>(
+                <div className={styles.wrapper}>
                <Title>Add new {descriptions[activeOption]}</Title>
                 <form 
-                    className={styles.form} onSubmit={this.props.submitFn}
+                    className={styles.form} onSubmit={context.addItem}
                     autoComplete='off'
                 >
         <div className={styles.formOptions}>
@@ -88,6 +93,9 @@ class Form extends React.Component{
                     />
                 </form>
             </div>
+            )
+        }
+        </AppContext.Consumer>
         )
     }
 } 
