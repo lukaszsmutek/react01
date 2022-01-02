@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Input.module.scss';
 import PropTypes from 'prop-types';
 
-const Input = ({tag:Tag, name, label, maxLength}) => (
+const Input = ({tag:Tag, name, label, maxLength, ...props}) => (
 
     <div className={styles.item}>
     <Tag
@@ -13,6 +13,7 @@ const Input = ({tag:Tag, name, label, maxLength}) => (
         required
         maxLength={maxLength}
         placeholder=" "
+        {...props}
     />
     <label className = {styles.label} htmlFor={name}>{label}</label>
     <div className={styles.item__bar}></div>

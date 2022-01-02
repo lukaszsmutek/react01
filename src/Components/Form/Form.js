@@ -22,11 +22,24 @@ class Form extends React.Component{
 
     state={
         activeOption:types.twitter, 
+        title:'',
+        link:'',
+        image:'',
+        description:'',
     }
 
     handleRadioButtonChange = (type) => {
-        this.setState({activeOption:type,})
+        this.setState({
+            activeOption:type,
+        });
+    };
+
+    handleInputChange = e => {
+        this.setState({
+            [e.target.name]:e.target.value
+        })
     }
+
     render(){
         const {activeOption}=this.state;
 
@@ -63,13 +76,18 @@ class Form extends React.Component{
 
         </div>
               
-                    <Input
+                        <Input
+                        onChange={this.andleInputChange}
+                        value={this.state.title}
+
                         name = "name"
                         label = {activeOption ===types.twitter ? 'Twitter Name' : 'Title'}
                         maxLength = {30}
                     />
                     {activeOption !== types.note ? (
                         <Input
+                        onChange={this.andleInputChange}
+                        value={this.state.link}
                         name = "link"
                         label = {activeOption === types.twitter ? "Twitter Link" : "Link"}
                     />
@@ -77,6 +95,8 @@ class Form extends React.Component{
                     
                     {activeOption === types.twitter ?(
                         <Input
+                        onChange={this.andleInputChange}
+                        value={this.state.image}
                         name = "image"
                         label = "Image"/>
 
@@ -84,6 +104,8 @@ class Form extends React.Component{
                         
                     
                     <Input
+                    onChange={this.andleInputChange}
+                    value={this.state.description} 
                         tag = "textarea"
                         name = "description"
                         label = "Description"
